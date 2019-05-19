@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
-//componentss
-
-import Header from "./components/header";
-
+//components
+import Routes from "./routes";
 const App = () => {
-  return <Header />;
+  return (
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  );
 };
 
 ReactDOM.render(<App />, document.querySelector("#root"));
