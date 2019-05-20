@@ -1,0 +1,20 @@
+.header {
+  background: #242424;
+}
+
+.headerOpt {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.headerOpt img {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.bars {
+  margin-right: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
