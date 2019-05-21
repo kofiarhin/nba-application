@@ -1,6 +1,6 @@
 import React from "react";
 import SideNav from "react-simple-sidenav";
-import style from "./sideNav.css";
+
 
 //components
 import SideNavItem from "./sideNavItems";
