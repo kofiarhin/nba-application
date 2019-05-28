@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import axios from "axios";
 
 import style from "./newslist.css"
 
 import { URL } from "../../../config";
-//component
+
+
+
 class NewsList extends Component {
 
 
@@ -13,6 +16,7 @@ class NewsList extends Component {
         items: [],
         start: this.props.start,
         end: this.props.start + this.props.amount,
+        amount: this.props.amount,
         type: this.props.type
     }
 
@@ -20,27 +24,19 @@ class NewsList extends Component {
     componentWillMount() {
 
         //get data
-
-        axios.get(`${URL}?_start=${this.state.start}&_end=${this.state.end}`).then(response => {
-
-
-            this.setState({
-
-                items: response.data
-            })
-
-
-            // console.log(this.state.items);
-
-        });
-
+        axios.get(`${URL}/articles?_start=${this.state.start}&_end=${this.state.end}`)
+            .then(response => {
+                this.setState({
+                    items: response.data
+                })
+                // console.log(this.state.items);
+            });
 
     }
 
     renderNews = (type) => {
 
         let template = null;
-
 
         switch (type) {
 

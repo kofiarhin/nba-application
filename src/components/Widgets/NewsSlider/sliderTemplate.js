@@ -6,7 +6,7 @@ import style from "./slider.css";
 
 const sliderTemplate = (props) => {
 
-    const data = props.data;
+    // const data = props.data;
 
 
     const settings = {
@@ -15,7 +15,8 @@ const sliderTemplate = (props) => {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        ...props.settings
     }
 
     let template = null;

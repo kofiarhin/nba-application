@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { URL } from "../../../config";
 
 
 //components
@@ -15,7 +16,10 @@ class NewsSlider extends Component {
 
     componentWillMount() {
 
-        axios.get(`http://localhost:3004/articles?_start=0&_end=3`).then(response => {
+
+        // console.log(URL);
+
+        axios.get(`${URL}/articles?_start=${this.props.start}&_end=${this.props.amount}`).then(response => {
 
             //if there is a response
             if (response.status === 200) {
@@ -34,7 +38,7 @@ class NewsSlider extends Component {
 
     render() {
 
-        return <SliderTemplate data={this.state.news} type="feature" />
+        return <SliderTemplate data={this.state.news} type={this.props.type} settings={this.props.settings} />
     }
 }
 

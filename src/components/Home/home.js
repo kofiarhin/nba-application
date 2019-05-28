@@ -6,7 +6,20 @@ import NewsList from "../Widgets/NewsList/newslist";
 const Home = () => {
   return (
     <div>
-      <NewsSlider />
+
+      {/* List of  news  */}
+      <NewsSlider
+
+        type="feature"
+        start={0}
+        amount={3}
+        settings={{
+          dots: true
+        }}
+      />
+
+
+
       <NewsList
         type="card"
         loadmore={true}
@@ -14,6 +27,12 @@ const Home = () => {
         amount={3}
 
       />
+
+      {/* List of videos */}
+
+
+
+      {/* <VideosList /> */}
     </div>
 
   )
