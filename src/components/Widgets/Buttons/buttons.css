@@ -1,0 +1,9 @@
+.loadmore {
+
+        text-align: center;
+        font-size: 1.4rem;
+        background: blue;
+        color:white;
+        cursor: pointer;
+        padding: 1rem 0rem;
+}
