@@ -1,0 +1,32 @@
+.teamHeaderWrapper {
+
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.teamHeaderWrapper .left {
+
+    margin-right: 1rem;
+}
+
+.teamHeaderWrapper .right {
+    flex: 1;
+}
+
+.postData {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.postData .date {
+
+    font-weight: 700;
+    font-size: 0.8rem;
+}

@@ -26,10 +26,8 @@ const VideoTemplate = (props) => {
 
                         <Link to={`/vidoes/${current.id}`} key={index}>
                             <div className={styles.link_wrapper}>
-
                                 <img src={`/images/videos/${current.image}`} className={styles.link_image} />
                                 {current.title}
-
                             </div>
                         </Link>
                     )
