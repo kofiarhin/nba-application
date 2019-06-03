@@ -20,12 +20,12 @@ const VideoTemplate = (props) => {
 
                 template = videos.map((current, index) => {
 
-                    console.log(current);
+                    // console.log(current);
 
                     return (
 
                         <Link to={`/vidoes/${current.id}`} key={index}>
-                            <div classNam={styles.link_wrapper}>
+                            <div className={styles.link_wrapper}>
 
                                 <img src={`/images/videos/${current.image}`} className={styles.link_image} />
                                 {current.title}

@@ -61,7 +61,6 @@ class VideoList extends Component {
     }
     render() {
 
-        console.log(this.state);
         return (
             <div>
                 {this.renderTitle()}
