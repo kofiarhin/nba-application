@@ -1,4 +1,12 @@
-.card {
-  background: orange;
+
+.news_item {
+
+    padding: 1rem;
+
 }
-/*# sourceMappingURL=newslist.css.map */
+
+.news_item a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
