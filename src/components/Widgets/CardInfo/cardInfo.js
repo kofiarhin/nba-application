@@ -5,6 +5,8 @@ import style from "./cardInfo.css";
 
 const CardInfo = (props) => {
 
+    console.log(props);
+
     const getTeamName = () => {
 
         // console.log("some team name");

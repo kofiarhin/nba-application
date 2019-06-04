@@ -66,7 +66,12 @@ class VideoList extends Component {
         switch (this.props.type) {
 
             case 'card':
-                template = <VideoTemplate data={this.state.videos} team={this.state.teams} />
+
+
+                template = <VideoTemplate
+                    data={this.state.videos}
+                    teams={this.state.teams}
+                />
                 break;
             default:
                 template = null;
