@@ -37,8 +37,10 @@ const Home = () => {
         title={true}
         start={0}
         amount={6}
+        loadMore={false}
 
       />
+
     </div>
 
   )

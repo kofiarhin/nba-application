@@ -1,52 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-//import styling
 import styles from "./videoList.css";
-
 
 const VideoTemplate = (props) => {
 
+    // console.log(props.data);
+    const template = props.data.map((current, index) => {
 
-    let template = null;
+        return (
 
-    switch (props.type) {
+            <Link to={`/videos/${current.id}`} key={index} className={styles.videoItem}>
 
-        case "card":
+                <div className={styles.left} style={{
+                    height: "100px",
+                    width: "100px",
+                    backgroundImage: `url(/images/videos/${current.image})`
+                }}> <div> </div> </div>
+                <div className={styles.right}>{current.title} </div>
+            </Link>
+        )
 
-            let videos = props.videos;
-
-            if (videos) {
-
-                template = videos.map((current, index) => {
-
-                    // console.log(current);
-
-                    return (
-
-                        <Link to={`/vidoes/${current.id}`} key={index}>
-                            <div className={styles.link_wrapper}>
-                                <img src={`/images/videos/${current.image}`} className={styles.link_image} />
-                                {current.title}
-                            </div>
-                        </Link>
-                    )
-
-                });
-            }
-            break;
-
-        default:
-            template = null;
-            break;
-    }
-
+    });
     return (
 
-        <div>{template}</div>
+        <div className={styles.videoWrapper}>{template}</div>
     )
 }
-
 
 
 export default VideoTemplate;
