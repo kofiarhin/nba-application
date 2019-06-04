@@ -7,7 +7,7 @@ import CardInfo from "../CardInfo/cardInfo";
 
 const VideoTemplate = (props) => {
 
-    console.log(props.data);
+    // console.log(props.data);
     const template = props.data.map((current, index) => {
 
         const teamId = current.team;
@@ -21,13 +21,14 @@ const VideoTemplate = (props) => {
                     width: "100px",
                     backgroundImage: `url(/images/videos/${current.image})`
                 }}> <div> </div> </div>
-                <div className={styles.right}>
 
+                <div className={styles.right}>
 
                     <CardInfo teams={props.teams} teamId={teamId} date={current.date} />
                     {current.title}
 
                 </div>
+
             </Link>
         )
 

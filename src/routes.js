@@ -6,6 +6,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home/home";
 import Layout from "./hoc/Layout/layout";
 import NewsArticle from "./components/Articles/News/Post/index";
+import VideoArticle from "./components/Articles/Videos/Video/index";
 
 class Routes extends Component {
   render() {
@@ -13,6 +14,7 @@ class Routes extends Component {
       <Layout>
         <Switch>
 
+          <Route path="/videos/:id" component={VideoArticle} />
           <Route path="/articles/:id" component={NewsArticle} />
           <Route path="/" exact component={Home} />
         </Switch>

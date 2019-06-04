@@ -27,9 +27,6 @@ const Home = () => {
 
       />
 
-      {/* List of videos */}
-
-
 
       <VideoList
 

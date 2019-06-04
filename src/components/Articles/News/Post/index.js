@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import styles from "../../articles.css";
 
 
 //import url 
@@ -48,16 +49,28 @@ class NewsArticle extends Component {
         let team = this.state.team[0];
         let article = this.state.article;
 
+        const body = article.body
+        const title = article.title;
 
         return (
 
-
             <div>
-                <Header team={team}
+                <Header
+                    team={team}
                     date={article.date}
                     author={article.author}
                 />
-                {/* <div>Footer Stuff</div> */}
+
+                {/* render body here */}
+
+                <div className={styles.articleWrapper}>
+
+                    <h1> {title}</h1>
+                    <div className={styles.articleImage} style={{
+                        backgroundImage: `url(/images/articles/${article.image})`
+                    }}></div>
+                    <div className={styles.articleBody}>{body}</div>
+                </div>
             </div>
         )
     }

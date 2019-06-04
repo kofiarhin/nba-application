@@ -30,3 +30,38 @@
     font-weight: 700;
     font-size: 0.8rem;
 }
+
+.articleWrapper {
+
+    padding: 1rem;
+}
+
+.articleWrapper h1 {
+
+    font-size: 1.6rem;
+}
+
+.articleWrapper .articleImage {
+    height: 300px;
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 1rem;
+}
+
+.articleWrapper .articleBody {
+
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+
+.videoWrapper {
+
+    padding: 1rem;
+}
+.videoWrapper h1 {
+
+    font-size: 1.4rem;
+    margin-bottom: 1.4rem;
+}
