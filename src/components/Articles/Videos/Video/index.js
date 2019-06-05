@@ -6,12 +6,15 @@ import { URL } from "../../../../config";
 import styles from "../../articles.css";
 //custom components
 import Header from "./header";
+import RelatedVideos from "../../../Widgets/VideoList/RelatedVideos/relatedVideos";
 
 class VideoArticle extends Component {
 
     state = {
         video: [],
-        team: []
+        team: [],
+        teams: [],
+        related: []
     }
 
     componentWillMount() {
@@ -23,22 +26,55 @@ class VideoArticle extends Component {
 
             const video = response.data[0];
 
+
             axios.get(`${URL}/teams?id=${video.team}`).then(response => {
 
                 this.setState({
 
                     video,
-                    team: response.data
+                    team: response.data[0]
                 });
+
+                this.getRelated();
 
             });
         })
     }
 
+
+    getRelated = () => {
+
+        const city = this.state.team.city;
+
+
+        //get teams
+
+        axios.get(`${URL}/teams`).then(response => {
+
+
+            let teams = response.data;
+
+            //get related videos according to city 
+            axios.get(`${URL}/videos?q=${city}`).then(response => {
+
+                this.setState({
+                    teams,
+                    related: response.data
+                });
+
+                // console.log(this.state);
+
+
+            });
+
+        });
+    }
+
     renderVideo = () => {
 
-        const video = this.state.video;
 
+        console.log(this.state);
+        const video = this.state.video;
         const title = video.title;
         const url = video.url;
 
@@ -58,6 +94,11 @@ class VideoArticle extends Component {
         )
     }
 
+    realatedVideos = () => {
+
+        return <div> Related videos </div>
+    }
+
     render() {
 
         return (
@@ -69,6 +110,11 @@ class VideoArticle extends Component {
                 />
 
                 {this.renderVideo()}
+                <RelatedVideos
+                    data={this.state.related}
+                    teams={this.state.teams}
+
+                />
             </div>
 
 
