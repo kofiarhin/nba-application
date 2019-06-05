@@ -55,7 +55,7 @@ class VideoArticle extends Component {
             let teams = response.data;
 
             //get related videos according to city 
-            axios.get(`${URL}/videos?q=${city}`).then(response => {
+            axios.get(`${URL}/videos?q=${city}&_limit=3`).then(response => {
 
                 this.setState({
                     teams,
