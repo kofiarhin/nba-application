@@ -91,6 +91,32 @@ class NewsList extends Component {
 
                 });
                 break;
+            case 'cardMain':
+
+                // console.log(this.state.items);
+                template = this.state.items.map((current, index) => {
+
+                    console.log(current);
+
+                    return (
+                        <div className={style.itemWrapper} key={index}>
+                            <Link to={`/articles/${current.id}`}>
+                                <div className={style.left}
+                                    style={{
+                                        backgroundImage: `url(/images/articles/${current.image})`,
+                                    }}
+                                ></div>
+                                <div className={style.right}>
+                                    <CardInfo teams={this.state.teams} teamId={current.id} date={current.date} />
+                                    <h1> {current.title} </h1>
+                                </div>
+                            </Link>
+
+                        </div>
+                    )
+
+                });
+                break;
 
             default:
                 template = null;
