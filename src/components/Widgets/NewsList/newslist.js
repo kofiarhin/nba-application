@@ -106,6 +106,7 @@ class NewsList extends Component {
                                         backgroundImage: `url(/images/articles/${current.image})`,
                                     }}
                                 ></div>
+
                                 <div className={style.right}>
                                     <CardInfo teams={this.state.teams} teamId={current.id} date={current.date} />
                                     <h1> {current.title} </h1>
